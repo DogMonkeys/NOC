@@ -6,9 +6,16 @@ ALL = [RAN, RAP, SWIM, WALK]
 
 from json import loads
 from os import getcwd
-print(getcwd())
+#print(getcwd())
 f = open('Data\\foods.json', encoding='utf-8')
 dt_tmp = f.read()
 f.close()
 FOODS = loads(dt_tmp)
 del dt_tmp
+del f
+
+f = open('Data\\rubbishs.json', encoding='utf-8')
+dt_tmp = f.read()
+f.close()
+RUBBISHS = loads(dt_tmp)
+del dt_tmp, f

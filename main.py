@@ -3,11 +3,12 @@ import os
 from tkinter import messagebox as mb
 from kll_sum.kll_main import main as run
 from Data import data
+from rubbish.main import rmain
 
 main_bg = None
 class NOC(object):
 	def __init__(self, **kw):
-		self.root = tk.Tk()
+		self.root = kw['root']
 		self.cmd1, self.cmd2 = kw['c1'], kw['c2']
 		self.root.title('健康生活小工具')
 		self.root.geometry('300x200')
@@ -19,7 +20,7 @@ class NOC(object):
 		main_bg = tk.PhotoImage(file='Data\\bg.gif')
 		tk.Label(self.root, image=main_bg).pack()
 		tk.Button(self.root, text='卡路里计算器', command=self.cmd1).place(x=105, y=90)
-		tk.Button(self.root, text='二氧化碳排放模型', command=self.cmd2).place(x=105, y=10)
+		tk.Button(self.root, text='垃圾分类', command=self.cmd2).place(x=105, y=10)
 		# self.ent_path = tk.Entry(self.root, width=35)
 		# self.ent_path.insert(0, '工作目录(项目储存位置)')
 		# self.ent_path.place(x=20, y=150)
@@ -39,7 +40,8 @@ class NOC(object):
 
 
 def main():
-	noc = NOC(c1=lambda:run(data), c2=lambda :print("cc2"))
+	r = tk.Tk()
+	noc = NOC(root=r, c1=lambda:run(data, tk.Toplevel(r)), c2=rmain)
 	noc.main()
 
 if __name__ == '__main__':
