@@ -21,7 +21,12 @@ class Check:
 		tk.Button(self.root, text='   关  闭   ', command=self.root.destroy).pack()
 
 	def flush(self):
-		pass
+		flag = random.randint(0, 1)
+		if flag:
+			moban = '%s属于什么垃圾?'
+		else:
+			moban = '下列属于%s的是?'
+		
 
 	def main(self):
 		self.root.mainloop()

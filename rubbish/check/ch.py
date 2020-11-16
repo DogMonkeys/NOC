@@ -1,6 +1,6 @@
 import random
 
-class Rand:	
+class Rand:
 	@classmethod
 	def chone(cls, dat):
 		names = ['易腐垃圾', '其他垃圾', '有害垃圾', '可回收物']
