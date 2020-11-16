@@ -1,5 +1,5 @@
 import tkinter as tk
-from ch import Rand
+from ch import *
 
 class Check:
 	def __init__(self, root, dat):
@@ -19,6 +19,9 @@ class Check:
 		tk.Button(self.root, text='   提  交   ').pack()
 		tk.Label(self.root, text='').pack()
 		tk.Button(self.root, text='   关  闭   ', command=self.root.destroy).pack()
+
+	def flush(self):
+		pass
 
 	def main(self):
 		self.root.mainloop()
