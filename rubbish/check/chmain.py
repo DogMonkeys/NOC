@@ -37,7 +37,7 @@ class Check:
 			self.crt_asw, self.nowdt = ks.index(name), [x2, [x]]
 			print(self.crt_asw)
 			for i, k in enumerate(self.rs):
-				k.config(text=self.nowdt[0][i])
+				k.config(text=ks[i])
 		else:
 			moban = '下列属于%s的是?'
 			name = Rand.ch_names()
