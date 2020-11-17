@@ -1,4 +1,5 @@
 from .classify.rbscly import Classify
+from .check.chmain import Check
 import tkinter as tk
 
 class Rmain:
@@ -9,7 +10,7 @@ class Rmain:
 		self.root.geometry('300x100')
 		self.root.resizable(0, 0)
 		tk.Button(self.root, text='垃 圾 分 类 查 询', command=lambda:Classify(tk.Toplevel(self.root), self.dat).main()).pack()
-		tk.Button(self.root, text='垃 圾 分 类 竞 赛').pack()
+		tk.Button(self.root, text='垃 圾 分 类 竞 赛', command=lambda:Check(tk.Toplevel(self.root), self.dat).main()).pack()
 		tk.Button(self.root, text='  退  出  ', command=self.root.destroy).pack()
 
 	def main(self):
